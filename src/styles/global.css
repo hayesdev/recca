@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-analog-cream text-analog-dark;
+  }
+}
+
+@layer components {
+  .cassette-tape {
+    @apply relative w-64 h-40 mx-auto;
+  }
+
+  .tape-spool {
+    @apply absolute top-1/2 w-12 h-12 bg-tape-secondary rounded-full;
+  }
+
+  .tape-hiss {
+    @apply h-1 bg-analog-light rounded-full animate-tape-hiss;
+  }
+}
+
+/* Custom animations */
+@keyframes tapeWind {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes tapeHiss {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+} 
